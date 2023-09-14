@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>采药山</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+
+    <style>
+        .box {
+            width: 2360px;
+            height: 1640px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        img {
+            position: absolute;
+        }
+        #ch1 {
+            width: 120px;
+            height: 200px;
+            z-index: 100;
+            position: absolute;
+            left: 54%;
+            bottom: 51%;
+        }
+        #chzl,
+        #chcz {
+            display: none;
+            /* display: block; */
+        }
+        #jyhzl,
+        #jyhcz {
+            display: none;
+        }
+        #jyh1 {
+            width: 120px;
+            height: 200px;
+            z-index: 100;
+            position: absolute;
+            left: 62%;
+            bottom: 42%;
+        }
+        #hqzl,
+        #hqcz {
+            display: none;
+        }
+        #hq1 {
+            width: 120px;
+            height: 200px;
+            z-index: 100;
+            position: absolute;
+            left: 48%;
+            bottom: 43.5%;
+        }
+        #cz1 {
+            width: 136px;
+            height: 56px;
+            z-index: 100;
+            position: absolute;
+            left: 84%;
+            bottom: 29.5%;
+        }
+        #cz2 {
+            width: 144px;
+            height: 56px;
+            z-index: 100;
+            position: absolute;
+            left: 46%;
+            bottom: 58%;
+        }
+        #cz3 {
+            width: 144px;
+            height: 56px;
+            z-index: 100;
+            position: absolute;
+            left: 39.5%;
+            bottom: 13.5%;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">触碰小花了解详情</h1>
+    <div class="box">
+    <img src="img/bj.png" alt="">
+    <img id="ch" src="img/柴胡.png" alt="">
+    <img id="jyh" src="img/金银花.png" alt="">
+    <img id="hq" src="img/黄芩.png" alt="">
+    <img id="chzl" src="img/柴胡资料.png" alt="">
+    <img id="chcz" src="img/柴胡采摘.png" alt="">
+    <img id="jyhzl" src="img/金银花资料.png" alt="">
+    <img id="jyhcz" src="img/金银花采摘.png" alt="">
+    <img id="hqzl" src="img/黄芩资料.png" alt="">
+    <img id="hqcz" src="img/黄芩采摘.png" alt="">
+    <div id="ch1"></div>
+    <div id="jyh1"></div>
+    <div id="hq1"></div>
+    <div id="cz1"></div>
+    <div id="cz2"></div>
+    <div id="cz3"></div>
+</div>
+<script>
+    var ch1 = document.getElementById("ch1")
+    var chzl = document.getElementById('chzl')
+    var chcz = document.getElementById('chcz')
+    ch1.onmouseenter = function () {
+        chzl.style.display = 'block'
+        chcz.style.display = 'block'
+        hqzl.style.display = 'none'
+        hqcz.style.display = 'none'
+        jyhzl.style.display = 'none'
+        jyhcz.style.display = 'none'
+    }
+    ch1.onmouseleave = function() {
+            // chzl.style.display = 'none'
+            // chcz.style.display = 'none'
+        }
+    var jyh1 = document.getElementById("jyh1")
+    var jyhzl = document.getElementById('jyhzl')
+    var jyhcz = document.getElementById('jyhcz')
+    jyh1.onmouseenter = function () {
+        chzl.style.display = 'none'
+        chcz.style.display = 'none'
+        jyhzl.style.display = 'block'
+        jyhcz.style.display = 'block'
+        hqzl.style.display = 'none'
+        hqcz.style.display = 'none'
+    }
+    ch1.onmouseleave = function() {
+            // chzl.style.display = 'none'
+            // chcz.style.display = 'none'
+    }
+    var hq1 = document.getElementById("hq1")
+    var hqzl = document.getElementById('hqzl')
+    var hqcz = document.getElementById('hqcz')
+    hq1.onmouseenter = function () {
+        chzl.style.display = 'none'
+        chcz.style.display = 'none'
+        jyhzl.style.display = 'none'
+        jyhcz.style.display = 'none'
+        hqzl.style.display = 'block'
+        hqcz.style.display = 'block'
+    }
+    ch1.onmouseleave = function() {
+            // chzl.style.display = 'none'
+            // chcz.style.display = 'none'
+    }
+    var cz1 = document.getElementById("cz1")
+    cz1.onclick  = function() {
+        jyh.style.display = 'none'
+        jyh1.style.display = 'none'
+        jyhcz.style.display = 'none'
+        jyhzl.style.display = 'none'
+        cz1.style.display = 'none'
+    }
+    var cz2 = document.getElementById("cz2")
+    cz2.onclick  = function() {
+        ch.style.display = 'none'
+        ch1.style.display = 'none'
+        chcz.style.display = 'none'
+        chzl.style.display = 'none'
+        cz2.style.display = 'none'
+    }
+    var cz3 = document.getElementById("cz3")
+    cz3.onclick  = function() {
+        hq.style.display = 'none'
+        hq1.style.display = 'none'
+        hqcz.style.display = 'none'
+        hqzl.style.display = 'none'
+        cz3.style.display = 'none'
+    }
+</script>
+</body>
+</html>

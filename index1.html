@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地图
+	</title>
+</head>
+<style>
+    body{
+        width: 1450px;
+        height: 800px;
+    }
+    .box{
+        position: relative;
+    }
+    #a{
+        position: relative
+    }
+    #b{
+        right:400px;
+       top: 80px;
+        position: absolute;
+    }
+    #c{
+        position: absolute;
+        right: 280px;
+        top: 280px;
+    }
+    #d{
+        position: absolute;
+        right: 200px;
+        top: 220px;
+    }
+    #e{
+        position: absolute;
+        right: 300px;
+        top: 0px;
+    }
+    .b img:hover{
+    animation: scale 5s linear  infinite;}
+    @keyframes scale{
+        0%{transform:scale(1);}
+        50%{transform:scale(1.2);}
+        100%{transform:scale(1);}
+        }
+</style>
+<body>
+    <div class="box">
+        <img src="img/药山.png" id="b" alt="" width="1000" height="700">
+        <img src="img/图层14.png" id="a" alt="" width="1450" height="800">  
+     <div class="b">
+         <a href="index3.html"><img src="img/图层1.png" id="d" alt="" width="800" height="500"></a>
+           <a href="index2.html"> <img src="img/图层1-2.png" id="e" alt="" width="800" height="500"></a>
+    </div>
+    <img src="img/从选区.png" id="c" alt="" width="600" height="400">
+    </div>
+</body>
+</html>

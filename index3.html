@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>药堂</title>
+	</head>
+    <style>
+		html,body {
+			width:100%;
+			height:1250px;
+		}
+		#main{
+			overflow-y:hidden;
+			height:100%;
+		}
+		#bg{
+			width:100%;
+			height:100%;
+			background-image: url("res/yao/yaotangbg.png");
+			background-repeat: no-repeat;
+			background-size:contain;
+		}
+		img{
+			width:100%;
+			position:absolute;
+		}
+		
+		.patient{
+			width:23%;
+			margin-top: 10%;
+			margin-left: 69%;
+			display:none;
+		}
+		
+		#back{
+			width:8%;
+			margin-left: 92%;
+			z-index:2;
+		}
+		.good{
+			width:15%;
+			display:none;
+			margin-top: 10%;
+			margin-left: 72%;
+		}
+		#yaocai{
+			width:8%;
+			margin-top:5%;
+			margin-left:10.5%;
+		}
+		#gxbt{
+			width:8%;
+			top:13%;
+			left:18.5%;
+		}
+		.hua{
+			width:7%;
+			top:20%;
+			z-index:1;
+		}
+		#hua1{
+			top:34%;
+			left:12%;
+		}
+		#hua2{
+			width:6%;
+			top:32.5%;
+			left:27%;
+		}
+		#hua3{
+			width:6%;
+			top:32.5%;
+			left:43%;
+		}
+		.note{
+			width:60%;
+			top:28%;
+			left:25%;
+			opacity:0;
+		}
+		@keyframes show{
+			0%{opacity:0}
+			100%{opacity:1}
+		}
+		@keyframes leave{
+			0%{opacity:1}
+			100%{opacity:0}
+		}
+		#delete{
+			width:7%;
+			top:29%;
+			left:72%;
+			opacity:1;
+		}
+		#next{
+			width:12%;
+			bottom:-20%;
+			right:5%;
+		}
+	</style>
+	<body>
+	<div id='main'>
+	   <div id="bg">
+		  <a href="index3.html"><img id="yaocai" src="res/yao/药材按钮.png"></a>
+		  <a href="index1.html"><img id="back" src="res/yao/返回.png"></a>
+		   <img class="hua" id="hua1" src="res/yao/jinyinhua.png">
+		   <img class="hua" id="hua2" src="res/yao/chaihu.png">
+		   <img class="hua" id="hua3" src="res/yao/huangqin.png">
+		   <img class="patient" id="bing1" src="res/yao/风热发烧.png">
+		   <img class="good" id="good1" src="res/yao/风热发烧痊愈.png">
+		   <img class="patient" id="bing2" src="res/yao/风寒发烧.png">
+		   <img class="good" id="good2" src="res/yao/风寒发烧痊愈.png">
+		   <img class="patient" id="bing3" src="res/yao/阴虚发烧.png">
+		   <img class="good" id="good3" src="res/yao/阴虚发烧痊愈.png">
+		   <a href="index4.html"><img id="gxbt" src="res/yao/功效按钮.png"></a>
+		   
+		   <img class="note" id="guide" src="res/yao/操作提示.png">
+		   <img class="note" id="erro" src="res/yao/错误提示.png">
+		   <img class="note" id="right" src="res/yao/正确提示.png">
+		   <img class="note" id="end" src="res/yao/祝贺卡片.png">
+		   <img id="delete" src="res/yao/消除.png">
+		   
+		   <img id="next" src="res/yao/下一步.png">
+	   </div>
+	</div>
+	</body>
+    <script type="text/javascript">
+		 var a=0;
+		 var guide=document.getElementById("guide");
+		 guide.style.animation="show 2s ease forwards";
+		document.getElementById("delete").onclick=function(){
+			guide.style.animation="leave 2s ease forwards";
+			document.getElementById("delete").style.animation="leave 1s ease forwards";
+		}
+		var i=parseInt(Math.random()*(4-1)+1);
+		document.getElementById("bing"+i).style.display="block";
+		if(i==1){
+			document.getElementById("hua1").onclick=function(){
+				document.getElementById("good"+i).style.display="block";
+				document.getElementById("bing"+i).style.display="none";
+				document.getElementById("right").style.animation="show 2s ease forwards";
+				document.getElementById("delete").style.animation="show 2s ease forwards";
+				document.getElementById("delete").onclick=function(){
+					document.getElementById("right").style.animation="leave 2s ease forwards";
+					document.getElementById("delete").style.animation="leave 1s ease forwards";
+				}
+			}
+			document.getElementById("hua2").onclick=function(){
+				document.getElementById("erro").style.animation="show 2s ease forwards";
+				document.getElementById("delete").style.animation="show 2s ease forwards";
+			}
+			document.getElementById("hua3").onclick=function(){
+				document.getElementById("erro").style.animation="show 2s ease forwards";
+				document.getElementById("delete").style.animation="show 2s ease forwards";
+				document.getElementById("delete").onclick=function(){
+					document.getElementById("erro").style.animation="leave 2s ease forwards";
+					document.getElementById("delete").style.animation="leave 1s ease forwards";
+				}
+			}
+		}
+		if(i==2){
+			document.getElementById("hua2").onclick=function(){
+				document.getElementById("good"+i).style.display="block";
+				document.getElementById("bing"+i).style.display="none";
+				document.getElementById("right").style.animation="show 2s ease forwards";
+				document.getElementById("delete").style.animation="show 2s ease forwards";
+				document.getElementById("delete").onclick=function(){
+					document.getElementById("right").style.animation="leave 2s ease forwards";
+					document.getElementById("delete").style.animation="leave 1s ease forwards";
+				}
+			}
+			document.getElementById("hua1").onclick=function(){
+				document.getElementById("erro").style.animation="show 2s ease forwards";
+				document.getElementById("delete").style.animation="show 2s ease forwards";
+			}
+			document.getElementById("hua3").onclick=function(){
+				document.getElementById("erro").style.animation="show 2s ease forwards";
+				document.getElementById("delete").style.animation="show 2s ease forwards";
+				document.getElementById("delete").onclick=function(){
+					document.getElementById("erro").style.animation="leave 2s ease forwards";
+					document.getElementById("delete").style.animation="leave 1s ease forwards";
+				}
+			}
+		}
+		if(i==3){
+			document.getElementById("hua3").onclick=function(){
+				document.getElementById("good"+i).style.display="block";
+				document.getElementById("bing"+i).style.display="none";
+				document.getElementById("right").style.animation="show 2s ease forwards";
+				document.getElementById("delete").style.animation="show 2s ease forwards";
+				document.getElementById("delete").onclick=function(){
+					document.getElementById("right").style.animation="leave 2s ease forwards";
+					document.getElementById("delete").style.animation="leave 1s ease forwards";
+				}
+			}
+			document.getElementById("hua1").onclick=function(){
+				document.getElementById("erro").style.animation="show 2s ease forwards";
+				document.getElementById("delete").style.animation="show 2s ease forwards";
+			}
+			document.getElementById("hua2").onclick=function(){
+				document.getElementById("erro").style.animation="show 2s ease forwards";
+				document.getElementById("delete").style.animation="show 2s ease forwards";
+				document.getElementById("delete").onclick=function(){
+					document.getElementById("erro").style.animation="leave 2s ease forwards";
+					document.getElementById("delete").style.animation="leave 1s ease forwards";
+				}
+			}
+		}
+   </script>
+
+</html>

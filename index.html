@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>首页</title>
+	</head>
+    <style>
+		html,body {
+			width:100%;
+			height:1250px;
+		}
+		#main{
+			overflow-y:hidden;
+			height:100%;
+		}
+		#bg{
+			width:100%;
+			height:100%;
+			background-image: url("res/bg.png");
+			background-repeat: no-repeat;
+			background-size:contain;
+		}
+		img{
+			width:100%;
+			position:absolute;
+		}
+		.phoneix{
+			margin-left:0px;
+			animation:action 3.4s ease-in-out infinite;
+		}
+		@keyframes action {
+			0%{margin-left:0px}
+			50%{margin-left:20px}
+			100%{margin-left:0px}
+		}
+		#title{
+			width:0px;
+			animation:enter 1.0s ease;
+			animation-fill-mode: forwards;
+		}
+		@keyframes enter {
+			0%{width:0px}
+			100%{width:100%}
+		}
+		
+		#deer{
+			position:relative;
+			margin-top:0%;
+			margin-left:0%;
+		}
+		@keyframes run{
+			0%{margin-left:10%}
+			100%{margin-left:100%}
+		}
+		#button{
+			position:absolute;
+			width:78%;
+			margin-top: -2%;
+			margin-left:13%;
+			z-index:1;
+		}
+	</style>
+	<body>
+	<div id='main'>
+	   <div id="bg">
+		   
+		   <img id="button" src="res/button.png">
+		   <img id="title" src="res/biaoti.png">
+		   <img src="res/begin.png">
+		   <img src="res/flower.png">
+		   <img src="res/huashu.png">
+		   <img src="res/shuye.png">
+		   <img src="res/yueliang.png">
+		   <img class="phoneix" src="res/phoneix.png">
+		   <img src="res/linzhi.png">
+		   <img id="deer" src="res/deer.png">
+		  
+	   </div>
+	</div>
+	</body>
+    <script type="text/javascript">
+        var next=document.getElementById("button");
+		var deer=document.getElementById("deer");
+		next.onclick=function(){
+			deer.style.animation="run 1.5s ease";
+			deer.addEventListener("webkitAnimationEnd", function(){
+				window.location.href="index1.html";
+			})
+		}
+    </script>
+
+</html>
